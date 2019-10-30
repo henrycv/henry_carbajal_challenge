@@ -7,12 +7,10 @@ FROM php:7.3-fpm
 
 # Root directory path
 ARG APP_DIR=$APP_DIR
-RUN pwd
 
 # Set working directory
 RUN mkdir -p $APP_DIR
 WORKDIR $APP_DIR
-RUN pwd
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -54,10 +52,12 @@ USER root
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
+RUN mkdir -p /home/www/.composer
+RUN chown -R www:www /home/www
 
 RUN echo "" >> ~/.bashrc && \
-    echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.bashrc
-RUN export PATH="$HOME/.composer/vendor/bin:$PATH"
+    echo 'export PATH="$HOME/.composer/vendor/bin:/home/www/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+RUN export PATH="$HOME/.composer/vendor/bin:/home/www/.composer/vendor/bin:$PATH"
 
 # Change current user to www
 USER www

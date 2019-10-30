@@ -16,7 +16,9 @@ services:
       dockerfile: ./docker/php/Dockerfile
       args:
         APP_DIR: ${APP_DIR}
+        SERVER_USER: ${SERVER_USER}
     container_name: ${PREFIX_PROJECT}-php
+    image: ${PREFIX_PROJECT}-php
     restart: on-failure
     environment:
       APP_NAME: ${APP_NAME}
@@ -31,7 +33,12 @@ services:
 
 
   docker-nginx:
-    image: nginx:1.16.1
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+      args:
+        SERVER_USER: ${SERVER_USER}
+    image: ${PREFIX_PROJECT}-nginx
     container_name: ${PREFIX_PROJECT}-nginx
     links:
       - docker-php
