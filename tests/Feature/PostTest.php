@@ -9,12 +9,14 @@ use App\Post;
 
 class PostTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
-     * A basic feature test get Post.
+     * A basic feature test get Posts.
      *
      * @return void
      */
-    public function testGetPost()
+    public function testGetPosts()
     {
         $user = factory(Post::class)->create();
         $response = $this->json('GET', '/api/post');
