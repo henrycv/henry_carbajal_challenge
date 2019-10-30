@@ -15,7 +15,7 @@ npm run dev
 
 ## Laravel steps
 
-# optional
+# Optional
 #php artisan make:migration create_table_posts
 
 php artisan make:model Post -m --force
@@ -33,3 +33,14 @@ php artisan make:factory TweetFactory --model=Tweet
 php artisan make:controller PostController -r
 
 php artisan route:list 
+
+artisan make:seeder UsersTableSeeder
+
+artisan make:seeder PostsTableSeeder
+
+php artisan db:seed --class=UsersTableSeeder
+
+php artisan db:seed --class=PostsTableSeeder
+
+# Optional
+#php artisan db:seed --class=PostsTableSeeder
