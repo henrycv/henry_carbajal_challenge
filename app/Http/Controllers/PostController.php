@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Http\Resources\PostResource;
 
 class PostController extends Controller
 {
@@ -14,10 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $post = Post::firstOrFail();
-
-        // return response()->json($post, 200);
-        return Post::all();
+        return PostResource::collection(Post::with('user')->paginate(25));
     }
 
     /**

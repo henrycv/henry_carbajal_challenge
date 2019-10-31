@@ -43,4 +43,9 @@ php artisan db:seed --class=UsersTableSeeder
 php artisan db:seed --class=PostsTableSeeder
 
 # Optional
-#php artisan db:seed --class=PostsTableSeeder
+#php artisan db:seed
+
+php artisan make:resource PostResource
+
+# Not necessary
+#php artisan make:resource Users --collection
