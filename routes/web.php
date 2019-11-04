@@ -17,6 +17,6 @@ Route::get('/', function () {
 
 Route::get('/seedTwitterUsers', 'PostController@seedTwitterUsers');
 
-Auth::routes();
+Auth::routes(['reset' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
