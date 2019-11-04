@@ -86,7 +86,7 @@ class PostController extends Controller
 
     public function seedTwitterUsers()
     {
-        dispatch(new ProcessTwitterUsers());
+        dispatch(new \App\Jobs\ProcessTwitterUsers());
 
     }
 }
