@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Resources\PostResource;
-use App\Post;
+use App\Http\Resources\TweetResource;
+use App\Tweet;
 
-class PostController extends Controller
+class TwitterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return PostResource::collection(Post::with('user')->paginate(3));
+        return TweetResource::collection(Tweet::with('user')->paginate(5));
     }
 
     /**
@@ -82,11 +82,5 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function seedTwitterUsers()
-    {
-        dispatch(new ProcessTwitterUsers());
-
     }
 }

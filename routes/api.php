@@ -18,3 +18,4 @@ use Illuminate\Http\Request;
 // });
 
 Route::resource('/post', 'PostController');
+Route::resource('/twitter', 'TwitterController');
