@@ -6,7 +6,7 @@ Proyect developed using:
 * [Docker Compose](https://docs.docker.com/compose/) - Virtualization.
 * [Linux, Nginx, MySQL and PHP (LEMP)](https://lemp.io/) - Stack.
 * [Laravel](https://laravel.com/) - PHP Framework.
-* [React JS](https://reactjs.org//) - JS Framework.
+* [React JS](https://reactjs.org/) - JS Framework.
 
 
 ## Built With
@@ -18,15 +18,30 @@ Proyect developed using:
 <img src="resources/img/laravel.png" style="max-width: 250px;"></img>
 <img src="resources/img/react.png" style="max-width: 250px;"></img>
 
+
+## Online  web
+
+
+* The project is available on:
+[https://henrycvlemp01.herokuapp.com/](https://henrycvlemp01.herokuapp.com/)
+## Examples
+
+* Get all Posts
+[https://henrycvlemp01.herokuapp.com/api/post](https://henrycvlemp01.herokuapp.com/api/post)
+
+* Get all Tweets
+[https://henrycvlemp01.herokuapp.com/api/twitter](https://henrycvlemp01.herokuapp.com/api/twitter)
+
 ## Getting Started
 
-Clone de repo and run 
+* Clone repo from 
+[https://github.com/henrycv/henry_carbajal_challenge](https://github.com/henrycv/henry_carbajal_challenge)
+  
+* Run 
 ```
 docker-compose up -d
 ```
 Navigate to http://localhost to view app.
-
-
 
 ### Prerequisites
 
